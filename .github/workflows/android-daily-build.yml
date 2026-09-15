@@ -89,7 +89,7 @@ jobs:
           NODE_OPTIONS: --max-old-space-size=8192
         run: |
           ./gradlew assembleRelease \
-            -PreactNativeArchitectures=arm64-v8a,armeabi-v7a,x86_64 \
+            -PreactNativeArchitectures=arm64-v8a \
             --no-daemon
 
       # Sign with our own keystore via apksigner (build-tools), independent of
