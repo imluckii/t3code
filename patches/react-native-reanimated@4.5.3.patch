@@ -42,10 +42,10 @@ index bc62f8fc31a1d3b08353df514bf4f954c6279ceb..0c16264538a13ae8b7bd4fd11e1227d8
    }
    layoutAnimations_.erase(layoutAnimationIt);
 diff --git a/Common/cpp/reanimated/LayoutAnimations/LayoutAnimationsProxy_Legacy.cpp b/Common/cpp/reanimated/LayoutAnimations/LayoutAnimationsProxy_Legacy.cpp
-index 9402e3e5ba4859ed344901b8b5884b9f708dd82b..2b1e4294ef798b7b6aabd04cc6663aae8297d034 100644
+index df53d8dbf3c6a5ee6a7f210f5de854792aefefb5..6482f6528d271e0815ea8f2b2fae62d974962c9b 100644
 --- a/Common/cpp/reanimated/LayoutAnimations/LayoutAnimationsProxy_Legacy.cpp
 +++ b/Common/cpp/reanimated/LayoutAnimations/LayoutAnimationsProxy_Legacy.cpp
-@@ -119,6 +119,7 @@ std::optional<SurfaceId> LayoutAnimationsProxy_Legacy::endLayoutAnimation(int ta
+@@ -155,6 +155,7 @@ std::optional<SurfaceId> LayoutAnimationsProxy_Legacy::endLayoutAnimation(int ta
    if (--layoutAnimation.count > 0) {
      return {};
    }
@@ -53,7 +53,7 @@ index 9402e3e5ba4859ed344901b8b5884b9f708dd82b..2b1e4294ef798b7b6aabd04cc6663aae
    maybeSettledAnimationTags_.insert(tag);
    auto surfaceId = layoutAnimation.finalView.surfaceId;
  
-@@ -414,12 +415,7 @@ void LayoutAnimationsProxy_Legacy::addOngoingAnimations(SurfaceId surfaceId, Sha
+@@ -453,12 +454,7 @@ void LayoutAnimationsProxy_Legacy::addOngoingAnimations(SurfaceId surfaceId, Sha
      auto layoutAnimationIt = layoutAnimations_.find(tag);
  
      if (layoutAnimationIt == layoutAnimations_.end() ||
